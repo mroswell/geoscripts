@@ -36,20 +36,17 @@ Detailed version:
   ```
 assuming fields a1 and a2 are street and state.
 
-11. Copy the field down to all rows in the spreadsheet (should reformat to =getCity(a2:b2), etc.
-
-Each entry may take up to 4 seconds to be returned. This is on purpose, as Google complains if the Google Map API is hit all at the same time with a lot of addresses.
-(you can adjust that number in the script, for instance, change the sleep number 4000 to 3000 for each function.)
+11. Copy the field down to all rows in the spreadsheet (should reformat to =getCity(a2:b2), etc. Each entry may take up to 4 seconds to be returned. This is on purpose, as Google complains if the Google Map API is hit all at the same time with a lot of addresses. (you can adjust that number in the script, for instance, change the sleep number 4000 to 3000 for each function.)
 
 12. It will also be helpful in truth-testing this, to add two more field columns.
-```
-=getCounty(a1:b1)
-```
-and
-```
-=getZip(a1:b1)
-```
-(Propagate through the rest of the rows)
+  ```
+  =getCounty(a1:b1)
+  ```
+  and
+  ```
+  =getZip(a1:b1)
+  ```
+  (Propagate through the rest of the rows)
 
 More notes:
 
