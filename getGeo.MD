@@ -31,9 +31,9 @@ Detailed version:
 9. Return to the spreadsheet tab.
 
 10. In a column likely to the right of your data, enter
-```
-=getCity(a1:b1) 
-```
+  ```
+  =getCity(a1:b1) 
+  ```
 assuming fields a1 and a2 are street and state.
 
 11. Copy the field down to all rows in the spreadsheet (should reformat to =getCity(a2:b2), etc.
@@ -49,7 +49,7 @@ and
 ```
 =getZip(a1:b1)
 ```
-(also propagated through the rest of the rows)
+(Propagate through the rest of the rows)
 
 More notes:
 
