@@ -1,9 +1,9 @@
 Short version for getting ZIP Codes: 
 
 Import a Google sheet script from here:
-'''
+```
 https://github.com/mroswell/geoscripts/raw/master/getGeo.js
-'''
+```
 and implement the getZip() function
 
 Also implement the getCounty() and getCity() to help find anomalies.
