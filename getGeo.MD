@@ -1,4 +1,4 @@
-### Short version for getting ZIP Codes
+### Short documentation for getting ZIP Codes
 
 Import a Google sheet script from here:
 ```
@@ -10,7 +10,7 @@ Also implement the getCounty() and getCity() to help find anomalies.
 
 
 
-### Detailed version 
+### Detailed documentation 
 
 1. Create a Google sheet using drive.google.com > Create > Spreadsheet
 
@@ -18,8 +18,9 @@ Also implement the getCounty() and getCity() to help find anomalies.
 
 3. From the Tools menu, choose *** Script Editor > Blank.*** This will open a new tab.
 
-4. Open yet another tab, and visit https://github.com/mroswell/geoscripts/raw/master/getGeo.js
-
+4. Open yet another tab, and visit 
+```
+https://github.com/mroswell/geoscripts/blob/master/getGeo.js```
 5. Click the "Raw" button.
 
 6. Select all the text and copy to the clipboard (Click inside the script, press Cmd-A to select all, and Cmd-C to copy)
@@ -50,9 +51,9 @@ assuming fields A1 and B1 are street and state.
 
 ### More notes 
 
-Review anomalous counties and zip codes. Obviously, a common address like 10 Main Street, in any given county, is not likely to return an accurate city or zip (as there may be multiple 10 Main Streets in the county). But if the county is correct, it's probably the right city.
+Review anomalous counties and zip codes. Obviously, a common address like 10 Main Street, in the absence of other information, is not likely to return an accurate city or zip (as there may be multiple 10 Main Streets in the county). But if the county is correct, it's probably the right city.
 
-If you start with just a street name, It's tempting to run getZip() on all of your newly acquired data, including your newly found city. But be sure to vet inputs. Generally, it's a good idea to first do the getZip() and getCounty() on your original data.
+If you start with just a street name, it's tempting to run getCity() and then getZip() on all of your newly acquired data, including your newly found city. But be sure to vet inputs. Generally, it's a good idea to first do the getZip() and getCounty() on your original data.
 
 You do not need to place an address in multiple fields. for instance "150 Court St, NY" in a single field will return the proper city: Brooklyn. In that case the formula would be something like =getCity(a1)
 
