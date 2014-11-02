@@ -73,3 +73,51 @@ function extractFromAddress(components, type){
             if (components[i].types[j]==type) return components[i].long_name;
     return "";
 }
+
+/**
+ * Looks up an address' probable Latitude using the Google geocoder.
+ *
+ * @param {string} address An address string (May consist of multiple cells, such as street, state, and zip).
+ * @return The Latitude of first matched address.
+ * @customfunction
+ */
+ function getLat(address) {
+  if (address == '') {
+    Logger.log("Must provide an address");
+    return;
+  }
+  var geocoder = Maps.newGeocoder();
+  Utilities.sleep(Math.random() * 4000);
+  var location;
+  var latitude;
+  loc = geocoder.geocode(address);
+
+  if (loc.status == 'OK') {
+    latitude = loc["results"][0]['geometry']['location']['lat'];
+ return latitude;
+  }
+};
+
+
+/**
+ * Looks up an address' probable Latitude using the Google geocoder.
+ *
+ * @param {string} address An address string (May consist of multiple cells, such as street, state, and zip).
+ * @return The longitude of first matched address.
+ * @customfunction
+ */
+ function getLng(address) {
+  if (address == '') {
+    Logger.log("Must provide an address");
+    return;
+  }
+  var geocoder = Maps.newGeocoder();
+  Utilities.sleep(Math.random() * 4000);
+  var location;
+  var longitude;
+  loc = geocoder.geocode(address);
+  if (loc.status == 'OK') {
+    longitude = loc["results"][0]['geometry']['location']['lng'];
+ return longitude;
+  }
+};
