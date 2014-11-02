@@ -32,11 +32,11 @@ Detailed version:
 
 10. In a column likely to the right of your data, enter
   ```
-  =getCity(a1:b1) 
+  =getCity(A1:B1) 
   ```
-assuming fields a1 and a2 are street and state.
+assuming fields A1 and B1 are street and state.
 
-11. Copy the field down to all rows in the spreadsheet (should reformat to =getCity(a2:b2), etc. Each entry may take up to 4 seconds to be returned. This is on purpose, as Google complains if the Google Map API is hit all at the same time with a lot of addresses. (you can adjust that number in the script, for instance, change the sleep number 4000 to 3000 for each function.)
+11. Copy the field down to all rows in the spreadsheet (should reformat to =getCity(A2:B2), etc. Each entry may take up to 4 seconds to be returned. This is on purpose, as Google complains if the Google Map API is hit all at the same time with a lot of addresses. (you can adjust that number in the script, for instance, change the sleep number 4000 to 3000 for each function.)
 
 12. It will also be helpful in truth-testing this, to add two more field columns.
   ```
@@ -50,13 +50,13 @@ assuming fields a1 and a2 are street and state.
 
 More notes:
 
-Review anomalous counties and zip codes. Obviously, a common address like 10 Main Street, in any given county, is not likely to return an accurate city (as there may be multiple 10 Main Streets in the county). But if the county is correct, it's probably the right city.
+Review anomalous counties and zip codes. Obviously, a common address like 10 Main Street, in any given county, is not likely to return an accurate city or zip (as there may be multiple 10 Main Streets in the county). But if the county is correct, it's probably the right city.
 
-It's tempting to run getZip() on all of your newly acquired data, including your newly found city. But be sure to vet inputs. Generally, it's a good idea to first do the getZip() and getCounty on your original data. 
+If you start with just a street name, It's tempting to run getZip() on all of your newly acquired data, including your newly found city. But be sure to vet inputs. Generally, it's a good idea to first do the getZip() and getCounty() on your original data.
 
 You do not need to place an address in multiple fields. for instance "150 Court St, NY" in a single field will return the proper city: Brooklyn. In that case the formula would be something like =getCity(a1)
 
-Google will complain about daily limits. (I'm not sure what the limit is, in terms of the number of API hits.) I've sometimes found that using a different spreadsheet (or a different Google account) can bypass that.
+Google may complain about daily limits. (I'm not sure what the limit is, in terms of the number of API hits.) I've sometimes found that using a different spreadsheet (or a different Google account) can bypass that.
 
 Do internet research to double-check likely anomalous addresses.
 
