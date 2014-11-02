@@ -16,7 +16,7 @@
   Utilities.sleep(Math.random() * 4000);
   location = geocoder.geocode(address);
   if (location.status == 'OK') {
-    zip = extractFromAdress(location["results"][0].address_components, "postal_code");
+    zip = extractFromAddress(location["results"][0].address_components, "postal_code");
  return zip;
   }
 };
@@ -39,7 +39,7 @@
   var location;
   location = geocoder.geocode(address);
   if (location.status == 'OK') {
-      county = extractFromAdress(location["results"][0].address_components, "administrative_area_level_2");
+      county = extractFromAddress(location["results"][0].address_components, "administrative_area_level_2");
  return county;
   }
 };
@@ -62,12 +62,12 @@
   var city;
   location = geocoder.geocode(address);
   if (location.status == 'OK') {
-      city = extractFromAdress(location["results"][0].address_components, "locality");
+      city = extractFromAddress(location["results"][0].address_components, "locality");
  return city;
   }
 };
 
-function extractFromAdress(components, type){
+function extractFromAddress(components, type){
     for (var i=0; i<components.length; i++)
         for (var j=0; j<components[i].types.length; j++)
             if (components[i].types[j]==type) return components[i].long_name;
