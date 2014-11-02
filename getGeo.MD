@@ -1,4 +1,4 @@
-Short version for getting ZIP Codes: 
+### Short version for getting ZIP Codes
 
 Import a Google sheet script from here:
 ```
@@ -10,7 +10,7 @@ Also implement the getCounty() and getCity() to help find anomalies.
 
 
 
-Detailed version:
+### Detailed version 
 
 1. Create a Google sheet using drive.google.com > Create > Spreadsheet
 
@@ -48,7 +48,7 @@ assuming fields A1 and B1 are street and state.
   ```
   (Propagate through the rest of the rows)
 
-More notes:
+### More notes 
 
 Review anomalous counties and zip codes. Obviously, a common address like 10 Main Street, in any given county, is not likely to return an accurate city or zip (as there may be multiple 10 Main Streets in the county). But if the county is correct, it's probably the right city.
 
