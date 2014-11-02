@@ -20,7 +20,8 @@ Also implement the getCounty() and getCity() to help find anomalies.
 
 4. Open yet another tab, and visit 
 ```
-https://github.com/mroswell/geoscripts/blob/master/getGeo.js```
+https://github.com/mroswell/geoscripts/blob/master/getGeo.js
+```
 5. Click the "Raw" button.
 
 6. Select all the text and copy to the clipboard (Click inside the script, press Cmd-A to select all, and Cmd-C to copy)
