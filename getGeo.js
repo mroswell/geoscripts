@@ -126,7 +126,7 @@ function extractFromAddress(components, type){
  * How many results (for instance, zip codes, counties, cities, etc.) could match the given address
  *
  * @param {string} address An address string (May consist of multiple cells, such as street, city, and state).
- * @return The ZIP of first matched address.
+ * @return The count of resulting matches.
  * @customfunction
  */
  function getGeoCount(address) {
@@ -143,3 +143,27 @@ function extractFromAddress(components, type){
  return count;
   }
 };
+
+/**
+ * Looks up an address' probable Country using the Google Map API.
+ *
+ * @param {string} address An address string (May consist of multiple cells, such as street, state, and zip).
+ * @return The Country of first matched address.
+ * @customfunction
+ */
+ function getCountry(address) {
+  if (address == '') {
+    Logger.log("Must provide an address");
+    return;
+  }
+  var geocoder = Maps.newGeocoder();
+  Utilities.sleep(Math.random() * 4000);
+  var location;
+  var city;
+  location = geocoder.geocode(address);
+  if (location.status == 'OK') {
+      city = extractFromAddress(location["results"][0].address_components, "country");
+ return city;
+  }
+};
+
