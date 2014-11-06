@@ -121,3 +121,25 @@ function extractFromAddress(components, type){
  return longitude;
   }
 };
+
+/**
+ * How many results (for instance, zip codes, counties, cities, etc.) could match the given address
+ *
+ * @param {string} address An address string (May consist of multiple cells, such as street, city, and state).
+ * @return The ZIP of first matched address.
+ * @customfunction
+ */
+ function getGeoCount(address) {
+  if (address == '') {
+    Logger.log("Must provide an address");
+    return;
+  }
+  var geocoder = Maps.newGeocoder();
+  var location;
+  Utilities.sleep(Math.random() * 4000);
+  location = geocoder.geocode(address);
+  if (location.status == 'OK') {
+    count = location["results"].length;
+ return count;
+  }
+};
