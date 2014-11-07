@@ -6,7 +6,7 @@ https://github.com/mroswell/geoscripts/raw/master/getGeo.js
 ```
 and implement the getZip() function
 
-Also implement the getCounty() and getCity() to help find anomalies.
+Also implement the getGeoCount(), getCounty() and getCity() to help find anomalies.
 
 
 
